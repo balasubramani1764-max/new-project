@@ -3,10 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUSHPA</title>
+    <title>Secure Quiz System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 text style="color: blue; justify-items: center;">BALA</h1>
 
+    <nav>
+        <button onclick="showPanel('user')">📝 Take Quiz</button>
+        <button onclick="showPanel('admin')">🔒 Admin Panel</button>
+    </nav>
+
+    <section id="user-panel" class="panel">
+        <div id="user-login-box">
+            <h2>Student Login</h2>
+            <input type="text" id="userName" placeholder="Enter Your Full Name">
+            <button class="add-btn" onclick="loginUser()">Start Exam</button>
+        </div>
+
+        <div id="quiz-area" class="hidden">
+            <div class="quiz-header">
+                <span id="welcome-msg"></span>
+            </div>
+            <hr>
+            <p id="display-question"></p>
+            <div id="options-container"></div>
+            
+            <div id="quiz-finished-msg" class="hidden">
+                <div class="success-icon">✅</div>
+                <h3>Quiz Submitted Successfully!</h3>
+                <p>Your responses have been recorded. Please contact your administrator for the results.</p>
+                <button onclick="logoutUser()">Return to Login</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="admin-panel" class="panel hidden">
+        <div id="admin-login">
+            <h2>Admin Security</h2>
+            <input type="password" id="adminPassInput" placeholder="Enter Admin Password">
+            <button class="login-btn" onclick="checkAdminPassword()">Unlock Dashboard</button>
+            <p id="login-error" class="error-text" style="display:none; color: red;">Incorrect Password!</p>
+        </div>
+
+        <div id="admin-content" class="hidden">
+            <div class="admin-header">
+                <h2>Admin Dashboard</h2>
+                <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+            </div>
+
+            <div class="tabs">
+                <button onclick="switchTab('manage')">Manage Questions</button>
+                <button onclick="switchTab('results')">User Scores</button>
+            </div>
+
+            <div id="tab-manage">
+                <div class="form-container">
+                    <h3>Add Question</h3>
+                    <input type="text" id="questText" placeholder="Question Text">
+                    <input type="text" id="opt1" placeholder="Option 1">
+                    <input type="text" id="opt2" placeholder="Option 2">
+                    <input type="text" id="opt3" placeholder="Option 3">
+                    <select id="correctIndex">
+                        <option value="0">Option 1 is Correct</option>
+                        <option value="1">Option 2 is Correct</option>
+                        <option value="2">Option 3 is Correct</option>
+                    </select>
+                    <button class="add-btn" onclick="addQuestion()">Add to Question Bank</button>
+                </div>
+                <ul id="admin-quest-list"></ul>
+            </div>
+
+            <div id="tab-results" class="hidden">
+                <h3>Recorded Student Scores</h3>
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+                <button class="danger-btn" onclick="clearResults()">Clear All Scores</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
 </body>
-</html>  
+</html>

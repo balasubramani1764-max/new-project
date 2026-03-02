@@ -1,0 +1,22 @@
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+nav { margin-bottom: 20px; }
+nav button { padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+nav button:hover { background: #3498db; color: white; }
+
+.panel { background: white; width: 100%; max-width: 600px; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.hidden { display: none; }
+
+input, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+.add-btn, .login-btn { background: #27ae60; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; }
+
+.option-btn { display: block; width: 100%; padding: 15px; margin: 10px 0; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; text-align: left; cursor: pointer; }
+.option-btn:hover { background: #eef7ff; border-color: #3498db; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+th { background: #f4f4f4; }
+
+.tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+.tabs button { background: none; border: 1px solid #3498db; color: #3498db; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+.danger-btn { background: #e74c3c; color: white; border: none; width: 100%; padding: 10px; border-radius: 6px; margin-top: 20px; cursor: pointer; }
+.logout-btn { background: #555; color: white; border: none; padding: 5px 10px; border-radius: 4px; float: right; cursor: pointer; }
